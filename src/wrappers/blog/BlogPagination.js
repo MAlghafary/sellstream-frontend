@@ -10,7 +10,7 @@ const BlogPagination = () => {
           </button>
         </li>
         <li>
-          <button className="active">1</button>
+          <button className="active">30</button>
         </li>
         <li>
           <button>2</button>

@@ -37,7 +37,6 @@ const MyAccount = () => {
                           <div className="myaccount-info-wrapper">
                             <div className="account-info-wrapper">
                               <h4>My Account Information</h4>
-                              <h5>Your Personal Details</h5>
                             </div>
                             <div className="row">
                               <div className="col-lg-6 col-md-6">
@@ -60,16 +59,10 @@ const MyAccount = () => {
                               </div>
                               <div className="col-lg-6 col-md-6">
                                 <div className="billing-info">
-                                  <label>Telephone</label>
+                                  <label>Phone Number</label>
                                   <input type="text" />
                                 </div>
-                              </div>
-                              <div className="col-lg-6 col-md-6">
-                                <div className="billing-info">
-                                  <label>Fax</label>
-                                  <input type="text" />
-                                </div>
-                              </div>
+                              </div> 
                             </div>
                             <div className="billing-back-btn">
                               <div className="billing-btn">
@@ -87,10 +80,6 @@ const MyAccount = () => {
                       </Accordion.Header>
                       <Accordion.Body>
                           <div className="myaccount-info-wrapper">
-                            <div className="account-info-wrapper">
-                              <h4>Change Password</h4>
-                              <h5>Your Password</h5>
-                            </div>
                             <div className="row">
                               <div className="col-lg-12 col-md-12">
                                 <div className="billing-info">
@@ -102,43 +91,6 @@ const MyAccount = () => {
                                 <div className="billing-info">
                                   <label>Password Confirm</label>
                                   <input type="password" />
-                                </div>
-                              </div>
-                            </div>
-                            <div className="billing-back-btn">
-                              <div className="billing-btn">
-                                <button type="submit">Continue</button>
-                              </div>
-                            </div>
-                          </div>
-                      </Accordion.Body>
-                    </Accordion.Item>
-
-                    <Accordion.Item eventKey="2" className="single-my-account mb-20">
-                      <Accordion.Header className="panel-heading">
-                          <span>3 .</span> Modify your address book entries
-                      </Accordion.Header>
-                      <Accordion.Body>
-                          <div className="myaccount-info-wrapper">
-                            <div className="account-info-wrapper">
-                              <h4>Address Book Entries</h4>
-                            </div>
-                            <div className="entries-wrapper">
-                              <div className="row">
-                                <div className="col-lg-6 col-md-6 d-flex align-items-center justify-content-center">
-                                  <div className="entries-info text-center">
-                                    <p>John Doe</p>
-                                    <p>Paul Park </p>
-                                    <p>Lorem ipsum dolor set amet</p>
-                                    <p>NYC</p>
-                                    <p>New York</p>
-                                  </div>
-                                </div>
-                                <div className="col-lg-6 col-md-6 d-flex align-items-center justify-content-center">
-                                  <div className="entries-edit-delete text-center">
-                                    <button className="edit">Edit</button>
-                                    <button>Delete</button>
-                                  </div>
                                 </div>
                               </div>
                             </div>

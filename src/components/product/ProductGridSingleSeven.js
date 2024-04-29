@@ -51,11 +51,6 @@ const ProductGridSingleSeven = ({
             </Link>
             {product.discount || product.new ? (
               <div className="product-img-badges">
-                {product.discount ? (
-                  <span className="pink">-{product.discount}%</span>
-                ) : (
-                  ""
-                )}
                 {product.new ? <span className="purple">New</span> : ""}
               </div>
             ) : (

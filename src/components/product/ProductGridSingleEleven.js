@@ -49,7 +49,6 @@ const ProductGridSingleEleven = ({
             </Link>
             {product.discount || product.new ? (
               <div className="product-img-badges">
-                {product.discount ? <span>-{product.discount}%</span> : ""}
                 {product.new ? <span>New</span> : ""}
               </div>
             ) : (
