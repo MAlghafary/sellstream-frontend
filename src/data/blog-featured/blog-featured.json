@@ -3,9 +3,9 @@
     "id": 1,
     "image": "/assets/img/blog/blog-1.jpg",
     "category": [""],
-    "title": "A guide to latest trends",
+    "title": "",
     "url": "/blog-details-standard",
-    "author": "Admin",
+    "author": "",
     "authorUrl": "/blog-standard"
   },
   {
@@ -14,16 +14,16 @@
     "category": [""],
     "title": "",
     "url": "/blog-details-standard",
-    "author": "Admin",
+    "author": "",
     "authorUrl": "/blog-standard"
   },
   {
     "id": 3,
     "image": "/assets/img/blog/blog-3.jpg",
     "category": [""],
-    "title": "Tips on having a happy life",
+    "title": "",
     "url": "/blog-details-standard",
-    "author": "Admin",
+    "author": "",
     "authorUrl": "/blog-standard"
   }
 ]

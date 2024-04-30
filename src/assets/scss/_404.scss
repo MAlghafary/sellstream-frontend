@@ -1,8 +1,8 @@
 .error {
   h1 {
-    font-size: 17rem;
+    font-size: 3rem;
     font-weight: bold;
-    letter-spacing: 1rem;
+    letter-spacing: 0rem;
     line-height: 1.1;
     margin-bottom: 30px;
     color: #a749ff;
@@ -61,33 +61,36 @@
   }
 }
 
-.searchform {
-  position: relative;
-  & input {
-    border: 1px solid #eeeeee;
-    height: 45px;
-    width: 100%;
-    padding-left: 15px;
-    padding-right: 80px;
-    background-color: transparent;
-  }
-  & button {
-    border: none;
-    background-color: #a749ff;
-    width: 70px;
-    color: #fff;
-    cursor: pointer;
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
-    &:hover {
-      background-color: #000;
-    }
-  }
-  @media #{$xs-layout} {
-    &.mb-50 {
-      margin-bottom: 20px;
-    }
-  }
+#advertisementForm {
+  text-align: left;
 }
+
+#advertisementForm label {
+  text-align: left;
+}
+
+#advertisementForm input[type="text"],
+#advertisementForm textarea {
+  text-align: left;
+}  
+button[type="submit"] {
+  background-color: #a749ff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px; 
+  border-radius: 5px; 
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer; 
+  transition: all 0.3s;
+  margin-top: 20px;
+}
+
+button[type="submit"]:hover {
+  background-color: #913bc9; 
+}
+
+
+
+
+

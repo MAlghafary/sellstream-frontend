@@ -56,7 +56,21 @@ const LoginRegister = () => {
                                 name="user-password"
                                 placeholder="Password"
                               />
-                              <div className="button-box">
+                        <div class="login-toggle-btn">
+                          <h6>Who am I?</h6>
+                            <select id="userType">
+                              <option value="seller">Seller</option>
+                              <option value="buyer">Buyer</option>
+                              <option value="admin">Admin</option>
+                             </select>
+                            </div>
+                            <div class="seller-options" >
+                            </div>
+                            <div class="buyer-options" >
+                            </div>
+                           <div class="admin-options" >
+                           </div>
+                             <div className="button-box">
                                 <div className="login-toggle-btn">
                                   <input type="checkbox" />
                                   <label className="ml-10">Remember me</label>
