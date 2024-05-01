@@ -41,10 +41,6 @@ const NotFound = () => {
                   <input type="text" id="number" name="number" required/>
                  </div>
                <div></div>
-
-
-
-
         <div>
                 <label for="images">images:</label>
                 <input type="file" id="images" name="images" accept="image/*" multiple required/>
