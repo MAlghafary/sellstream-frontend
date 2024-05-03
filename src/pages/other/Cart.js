@@ -21,8 +21,8 @@ const Cart = () => {
   return (
     <Fragment>
       <SEO
-        titleTemplate="Cart"
-        description="Cart page of flone react minimalist eCommerce template."
+        title="Cart"
+       
       />
 
       <LayoutOne headerTop="visible">
@@ -101,19 +101,7 @@ const Cart = () => {
                                   >
                                     {cartItem.name}
                                   </Link>
-                                  {cartItem.selectedProductColor &&
-                                  cartItem.selectedProductSize ? (
-                                    <div className="cart-item-variation">
-                                      <span>
-                                        Color: {cartItem.selectedProductColor}
-                                      </span>
-                                      <span>
-                                        Size: {cartItem.selectedProductSize}
-                                      </span>
-                                    </div>
-                                  ) : (
-                                    ""
-                                  )}
+                                 
                                 </td>
 
                                 <td className="product-price-cart">
