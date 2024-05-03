@@ -43,6 +43,13 @@ const Contact = () => {
                         <input name="email" placeholder="Email*" type="email" />
                       </div>
                       <div className="col-lg-12">
+                        <input
+                          name="subject"
+                          placeholder="Subject*"
+                          type="text"
+                        />
+                      </div>
+                      <div className="col-lg-12">
                         <textarea
                           name="message"
                           placeholder="Your Message*"

@@ -101,7 +101,6 @@ const Cart = () => {
                                   >
                                     {cartItem.name}
                                   </Link>
-                                 
                                 </td>
 
                                 <td className="product-price-cart">
