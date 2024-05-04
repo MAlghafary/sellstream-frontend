@@ -21,7 +21,7 @@ const Wishlist = () => {
     <Fragment>
       <SEO
         titleTemplate="Wishlist"
-        description="Wishlist page of flone react minimalist eCommerce template."
+        description="Wishlist page "
       />
       <LayoutOne headerTop="visible">
         {/* breadcrumb */}

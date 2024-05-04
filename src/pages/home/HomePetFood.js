@@ -13,8 +13,8 @@ const HomePetFood = () => {
   return (
     <Fragment>
       <SEO
-        titleTemplate="Pet Food Home"
-        description="Pet food home of flone react minimalist eCommerce template."
+        titleTemplate="Home"
+        description=" home "
       />
       <LayoutOne headerTop="visible">
         {/* hero slider */}

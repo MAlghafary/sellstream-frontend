@@ -13,8 +13,8 @@ const HomeFlowerShopTwo = () => {
   return (
     <Fragment>
       <SEO
-        titleTemplate="Flower Shop Home"
-        description="Flower Shop home of flone react minimalist eCommerce template."
+        titleTemplate=" Home"
+        description=" home "
       />
       <LayoutEight
         headerTop="visible"

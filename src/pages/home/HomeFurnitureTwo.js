@@ -10,8 +10,8 @@ const HomeFurnitureTwo = () => {
   return (
     <LayoutFour>
       <SEO
-        titleTemplate="Furniture Home"
-        description="Furniture home of flone react minimalist eCommerce template."
+        titleTemplate=" Home"
+        description="home"
       />
       {/* hero slider */}
       <HeroSliderEleven />

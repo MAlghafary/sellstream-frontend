@@ -12,8 +12,8 @@ const HomeElectronicsTwo = () => {
   return (
     <Fragment>
       <SEO
-        titleTemplate="Electronics Home"
-        description="Electronics home of flone react minimalist eCommerce template."
+        titleTemplate=" Home"
+        description=" home "
       />
       <LayoutOne
         headerContainerClass="container-fluid"
