@@ -17,7 +17,7 @@ import compareReducer from "./slices/compare-slice";
 import wishlistReducer from "./slices/wishlist-slice";
 
 const persistConfig = {
-    key: "flone",
+    key: "SellStream",
     version: 1.1,
     storage,
     blacklist: ["product"]

@@ -42,6 +42,11 @@ const NavMenu = ({ menuWhiteClass, sidebarMenu }) => {
                 {t("about_us")}
               </Link>
             </li>
+            <li>
+                <Link to={process.env.PUBLIC_URL + "/checkout"}>
+                  {t("checkout")}
+                </Link>
+              </li>
         </ul>
       </nav>
     </div>

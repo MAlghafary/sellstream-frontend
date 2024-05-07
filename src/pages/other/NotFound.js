@@ -37,6 +37,11 @@ const NotFound = () => {
                 <textarea id="description" name="description" required></textarea>
            </div>
            <div>
+                  <label for="title">Ad price:</label>
+                  <input type="text" id="number" name="number" required/>
+                 </div>
+               <div></div>
+           <div>
                   <label for="title">Contact the Ad:</label>
                   <input type="text" id="number" name="number" required/>
                  </div>
@@ -45,11 +50,7 @@ const NotFound = () => {
                 <label for="images">images:</label>
                 <input type="file" id="images" name="images" accept="image/*" multiple required/>
              </div>
-         <div>
-
-            <label for="video"> video:</label>
-            <input type="file" id="video" name="video" accept="video/*"/>
-        </div>
+       
       </form> 
             <button type="submit">Posting </button>
                 </div>

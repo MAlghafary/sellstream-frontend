@@ -12,7 +12,7 @@ const Contact = () => {
     <Fragment>
       <SEO
         titleTemplate="Contact"
-        description="Contact page of flone react minimalist eCommerce template."
+        description="Contact page "
       />
       <LayoutOne headerTop="visible">
         {/* breadcrumb */}
@@ -24,49 +24,25 @@ const Contact = () => {
         />
         <div className="contact-area pt-100 pb-100">
           <div className="container">
-            
-            <div className="custom-row-2">
-              <div className="col-12 col-lg-4 col-md-5">
-            
-              </div>
-              <div className="col-12 col-lg-8 col-md-7">
-                <div className="contact-form">
-                  <div className="contact-title mb-30">
-                    <h2>Get In Touch</h2>
-                  </div>
-                  <form className="contact-form-style">
-                    <div className="row">
-                      <div className="col-lg-6">
-                        <input name="name" placeholder="Name*" type="text" />
-                      </div>
-                      <div className="col-lg-6">
-                        <input name="email" placeholder="Email*" type="email" />
-                      </div>
-                      <div className="col-lg-12">
-                        <input
-                          name="subject"
-                          placeholder="Subject*"
-                          type="text"
-                        />
-                      </div>
-                      <div className="col-lg-12">
-                        <textarea
-                          name="message"
-                          placeholder="Your Message*"
-                          defaultValue={""}
-                        />
-                        <button className="submit" type="submit">
-                          SEND
-                        </button>
-                      </div>
-                    </div>
-                  </form>
-                  <p className="form-message" />
+              <h1> Get In Touch </h1>
+                <form id="ContactForm">
+               <div>
+               <input name="name" placeholder="Name*" type="text" />
                 </div>
+               <div>
+               <input name="email" placeholder="Email*" type="email" />
+               </div>
+               <div> 
+                  <input
+                  name="subject"placeholder="Subject*"type="text" />
+               </div>
+               <div>
+                     <textarea name="message" placeholder="Your Message*"defaultValue={""}/>
+               </div>
+              </form> 
+                 <button className="submit" type="submit"> SEND </button>
               </div>
-            </div>
           </div>
-        </div>
       </LayoutOne>
     </Fragment>
   );

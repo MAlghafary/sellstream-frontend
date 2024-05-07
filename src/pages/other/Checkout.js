@@ -17,7 +17,7 @@ const Checkout = () => {
     <Fragment>
       <SEO
         titleTemplate="Checkout"
-        description="Checkout page of flone react minimalist eCommerce template."
+        description="Checkout page "
       />
       <LayoutOne headerTop="visible">
         {/* breadcrumb */}
