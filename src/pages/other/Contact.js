@@ -26,18 +26,21 @@ const Contact = () => {
           <div className="container">
               <h1> Get In Touch </h1>
                 <form id="ContactForm">
-               <div>
+              <p><div>
                <input name="name" placeholder="Name*" type="text" />
-                </div>
-               <div>
+              </div></p> 
+
+              <p><div>
                <input name="email" placeholder="Email*" type="email" />
-               </div>
-               <div> 
+               </div></p> 
+              
+              <p><div> 
                   <input
                   name="subject"placeholder="Subject*"type="text" />
-               </div>
+               </div></p> 
+            
                <div>
-                     <textarea name="message" placeholder="Your Message*"defaultValue={""}/>
+                 <textarea name="message" placeholder="Your Message*"defaultValue={""}/>
                </div>
               </form> 
                  <button className="submit" type="submit"> SEND </button>
