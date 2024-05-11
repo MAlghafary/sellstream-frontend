@@ -4,7 +4,7 @@ import SEO from "../../components/seo";
 import LayoutOne from "../../layouts/LayoutOne";
 import Breadcrumb from "../../wrappers/breadcrumb/Breadcrumb";
 
-const Announcements = () => {
+const NotFound = () => {
   let { pathname } = useLocation();
 
   return (
@@ -63,4 +63,4 @@ const Announcements = () => {
   );
 };
 
-export default Announcements;
+export default NotFound;

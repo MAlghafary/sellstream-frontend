@@ -102,7 +102,7 @@ const Wishlist = lazy(() => import("./pages/other/Wishlist"));
 
 const Checkout = lazy(() => import("./pages/other/Checkout"));
 
-const Announcements = lazy(() => import("./pages/other/Announcements"));
+const NotFound = lazy(() => import("./pages/other/NotFound"));
 
 const App = () => {
   return (
@@ -392,7 +392,7 @@ const App = () => {
                 element={<Checkout/>}
               /> 
 
-              <Route path="*" element={<Announcements/>} />
+              <Route path="*" element={<NotFound/>} />
             </Routes>
           </Suspense>
         </ScrollToTop>
