@@ -18,9 +18,7 @@ const NavMenu = ({ menuWhiteClass, sidebarMenu }) => {
             <Link to={process.env.PUBLIC_URL + "/"}>
               {t("home")}
               {sidebarMenu }
-               
             </Link>
-            
           </li>
           <li>
             <Link to={process.env.PUBLIC_URL + "/shop-grid-standard"}>
@@ -43,10 +41,11 @@ const NavMenu = ({ menuWhiteClass, sidebarMenu }) => {
               </Link>
             </li>
             <li>
-                <Link to={process.env.PUBLIC_URL + "/checkout"}>
-                  {t("checkout")}
-                </Link>
-              </li>
+            <Link to={process.env.PUBLIC_URL + "/blog-standard"}>
+              {t("Admin Dashboard")}
+              {sidebarMenu}
+            </Link>
+          </li>  
         </ul>
       </nav>
     </div>

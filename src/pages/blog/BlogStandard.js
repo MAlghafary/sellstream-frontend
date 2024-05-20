@@ -13,15 +13,15 @@ const BlogStandard = () => {
   return (
     <Fragment>
       <SEO
-        titleTemplate="Blog"
-        description="Blog of flone react minimalist eCommerce template."
+        titleTemplate="Admin Dashboard"
+        description="Admin Dashboard"
       />
       <LayoutOne headerTop="visible">
         {/* breadcrumb */}
         <Breadcrumb 
           pages={[
             {label: "Home", path: process.env.PUBLIC_URL + "/" },
-            {label: "Blog", path: process.env.PUBLIC_URL + pathname }
+            {label: "Admin Dashboard", path: process.env.PUBLIC_URL + pathname }
           ]} 
         />
         <div className="blog-area pt-100 pb-100">
