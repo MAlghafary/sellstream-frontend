@@ -18,9 +18,23 @@ const TabProduct = ({
       <div className="container">
         <SectionTitle titleText="DAILY DEALS!" positionClass="text-center" />
         <Tab.Container defaultActiveKey="bestSeller">
-          
-            
-           
+        <Nav variant="pills" className="product-tab-list pb-55 text-center">
+            <Nav.Item>
+              <Nav.Link eventKey="newArrival">
+                <h4>New Arrivals</h4>
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventKey="bestSeller">
+                <h4>Best Sellers</h4>
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventKey="saleItems">
+                <h4>Sale Items</h4>
+              </Nav.Link>
+            </Nav.Item>
+          </Nav>
            
           <Tab.Content>
             <Tab.Pane eventKey="newArrival">
@@ -28,7 +42,7 @@ const TabProduct = ({
                 <ProductGrid
                   category={category}
                   type="new"
-                  limit={8}
+                  limit={6}
                   spaceBottomClass="mb-25"
                 />
               </div>
@@ -38,7 +52,7 @@ const TabProduct = ({
                 <ProductGrid
                   category={category}
                   type="bestSeller"
-                  limit={8}
+                  limit={6}
                   spaceBottomClass="mb-25"
                 />
               </div>
@@ -48,7 +62,7 @@ const TabProduct = ({
                 <ProductGrid
                   category={category}
                   type="saleItems"
-                  limit={8}
+                  limit={6}
                   spaceBottomClass="mb-25"
                 />
               </div>

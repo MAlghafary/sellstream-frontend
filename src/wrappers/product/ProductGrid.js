@@ -15,7 +15,7 @@ const ProductGrid = ({
   const { cartItems } = useSelector((state) => state.cart);
   const { wishlistItems } = useSelector((state) => state.wishlist);
   const { compareItems } = useSelector((state) => state.compare);
-  const prods = getProducts(products, category, type, limit)
+  const prods = getProducts(products, "", type, limit)
   
   return (
     <Fragment>

@@ -1,28 +1,35 @@
 // get products
 export const getProducts = (products, category, type, limit) => {
+  // Filter products by category if provided
   const finalProducts = category
-    ? products.filter(
-        product => product.category.filter(single => single === category)[0]
-      )
+    ? products.filter(product => product.category.includes(category))
     : products;
 
-   if (type && type === "new") {
-    const newProducts = finalProducts.filter(single => single.new);
-    return newProducts.slice(0, limit ? limit : newProducts.length);
+  console.log("products", products); 
+  console.log("finalProducts", finalProducts); 
+
+  // Filter products by type if provided
+  if (type) {
+    if (type === "new") {
+      const newProducts = finalProducts.filter(single => single.isNew === 1);
+      return newProducts.slice(0, limit ? limit : newProducts.length);
+    }
+    if (type === "bestSeller") {
+      const bestSellers = finalProducts
+      .slice() // Make a shallow copy of the array to avoid in-place sorting
+      .sort((a, b) => b.saleCount - a.saleCount);
+    return bestSellers.slice(0, limit ? limit : bestSellers.length);
+        
+    }
+    if (type === "saleItems") {
+      const saleItems = finalProducts.filter(
+        single => single.discount && single.discount > 0
+      );
+      return saleItems.slice(0, limit ? limit : saleItems.length);
+    }
   }
-  if (type && type === "bestSeller") {
-    return finalProducts
-      .sort((a, b) => {
-        return b.saleCount - a.saleCount;
-      })
-      .slice(0, limit ? limit : finalProducts.length);
-  }
-  if (type && type === "saleItems") {
-    const saleItems = finalProducts.filter(
-      single => single.discount && single.discount > 0
-    );
-    return saleItems.slice(0, limit ? limit : saleItems.length);
-  }
+
+  // Return products with limit if provided
   return finalProducts.slice(0, limit ? limit : finalProducts.length);
 };
 

@@ -19,7 +19,9 @@ const IconGroup = ({ iconWhiteClass }) => {
   const { compareItems } = useSelector((state) => state.compare);
   const { wishlistItems } = useSelector((state) => state.wishlist);
   const { cartItems } = useSelector((state) => state.cart);
-  const { isLoggedIn, token } = useSelector((state) => state.login);
+  const { isLoggedIn, token, email, usertype } = useSelector(
+    (state) => state.login
+  );
   const dispatch = useDispatch();
   const navigate = useNavigate();
 

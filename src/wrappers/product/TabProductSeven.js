@@ -41,7 +41,6 @@ const TabProductSeven = ({
             <Tab.Pane eventKey="newArrival">
               <div className="row">
                 <ProductGridTwo
-                  category={category}
                   type="new"
                   limit={8}
                   spaceBottomClass="mb-25"
@@ -51,7 +50,6 @@ const TabProductSeven = ({
             <Tab.Pane eventKey="bestSeller">
               <div className="row">
                 <ProductGridTwo
-                  category={category}
                   type="bestSeller"
                   limit={8}
                   spaceBottomClass="mb-25"
@@ -61,7 +59,6 @@ const TabProductSeven = ({
             <Tab.Pane eventKey="saleItems">
               <div className="row">
                 <ProductGridTwo
-                  category={category}
                   type="saleItems"
                   limit={8}
                   spaceBottomClass="mb-25"

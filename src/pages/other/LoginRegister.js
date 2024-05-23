@@ -71,8 +71,7 @@ const LoginRegister = () => {
       });
 
       handleApiResponse(response,(data) => {
-        const token = data.token
-        dispatch(loginSuccess({ token}))
+        dispatch(loginSuccess({ data}))
         navigate('/');
       })
     } catch (error) {
