@@ -26,8 +26,8 @@ const NavMenu = ({ menuWhiteClass, sidebarMenu }) => {
             </Link>
           </li>
           <li>
-              <Link to={process.env.PUBLIC_URL + "/not-found"}>
-                {t("Announcements")}
+              <Link to={process.env.PUBLIC_URL + "/new-product"}>
+                {t("new_product")}
               </Link>
             </li>
           <li>
@@ -41,7 +41,7 @@ const NavMenu = ({ menuWhiteClass, sidebarMenu }) => {
               </Link>
             </li>
             <li>
-            <Link to={process.env.PUBLIC_URL + "/blog-standard"}>
+            <Link to={process.env.PUBLIC_URL + "/pending-approval"}>
               {t("Admin Dashboard")}
               {sidebarMenu}
             </Link>

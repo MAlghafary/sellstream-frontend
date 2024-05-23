@@ -31,4 +31,57 @@ const handleApiResponse = async (responsePromise, callback) => {
   }
 };
 
+
+export const fetchDataWithToken = async (url, token, logoutAction) => {
+  try {
+    const response = await fetch(url, {
+      headers: {
+        Authorization: `${token}`, // Include the token in the Authorization header
+      },
+    });
+
+    if (response.status === 401 && token) {
+      // If response status is 401 and token is present, execute logout action
+      logoutAction();
+      return; // Exit the function
+    }
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    throw error; // Rethrow the error so that it can be handled by the caller
+  }
+};
+
+
+
+export const postDataWithToken = async (url ,data , token, logoutAction) => {
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      body: data,
+      headers: {
+        Authorization: `${token}`,
+        "Content-Type": "application/json"
+      },
+    });
+
+    if (response.status === 401 && token) {
+      // If response status is 401 and token is present, execute logout action
+      logoutAction();
+      return; // Exit the function
+    }
+
+    return response;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    throw error; // Rethrow the error so that it can be handled by the caller
+  }
+};
+
 export default handleApiResponse;
