@@ -1,27 +1,98 @@
-import React, { Fragment } from "react";
-import { Link, useLocation } from "react-router-dom"; 
+import React, { Fragment, useState } from "react";
+import { Link, useLocation,useNavigate } from "react-router-dom";
 import Tab from "react-bootstrap/Tab";
 import Nav from "react-bootstrap/Nav";
 import SEO from "../../components/seo";
 import LayoutOne from "../../layouts/LayoutOne";
 import Breadcrumb from "../../wrappers/breadcrumb/Breadcrumb";
+import handleApiResponse from "../../helpers/apiUtils";
+import { useDispatch } from "react-redux";
+import { loginSuccess } from "../../store/slices/login-slice";
 
 const LoginRegister = () => {
   let { pathname } = useLocation();
+  const dispatch = useDispatch()
+
+
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [userType, setUserType] = useState("seller");
+  const navigate = useNavigate();
+
+
+  const handleUserTypeChange = (event) => {
+    setUserType(event.target.value);
+  };
+
+  const handleRegistation = async (event) => {
+    event.preventDefault();
+
+    const userData = {
+      username,
+      password,
+      email,
+      userType
+    };
+
+    try {
+      // Send a POST request to the endpoint
+      const response = await fetch("http://localhost:6001/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "*/*"
+        },
+        body: JSON.stringify(userData),
+      });
+
+      handleApiResponse(response,() => {})
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+  const handlelogin = async (event) => {
+    event.preventDefault();
+
+    const userData = {
+      email,
+      password
+    };
+
+    try {
+      const response = await fetch("http://localhost:6001/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "*/*"
+        },
+        body: JSON.stringify(userData),
+      });
+
+      handleApiResponse(response,(data) => {
+        const token = data.token
+        dispatch(loginSuccess({ token}))
+        navigate('/');
+      })
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
 
   return (
     <Fragment>
-      <SEO
-        titleTemplate="Login"
-        description="Login page "
-      />
+      <SEO titleTemplate="Login" description="Login page " />
       <LayoutOne headerTop="visible">
         {/* breadcrumb */}
-        <Breadcrumb 
+        <Breadcrumb
           pages={[
-            {label: "Home", path: process.env.PUBLIC_URL + "/" },
-            {label: "Login Register", path: process.env.PUBLIC_URL + pathname }
-          ]} 
+            { label: "Home", path: process.env.PUBLIC_URL + "/" },
+            {
+              label: "Login Register",
+              path: process.env.PUBLIC_URL + pathname,
+            },
+          ]}
         />
         <div className="login-register-area pt-100 pb-100">
           <div className="container">
@@ -45,32 +116,24 @@ const LoginRegister = () => {
                       <Tab.Pane eventKey="login">
                         <div className="login-form-container">
                           <div className="login-register-form">
-                            <form>
-                              <input
-                                type="text"
-                                name="user-name"
-                                placeholder="Username"
+                            <form onSubmit={handlelogin}>
+                            <input
+                                required
+                                name="user-email"
+                                placeholder="Email"
+                                type="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                               />
                               <input
+                                required
                                 type="password"
                                 name="user-password"
                                 placeholder="Password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
                               />
-                        <div class="login-toggle-btn">
-                          <h6>Who am I?</h6>
-                            <select id="userType">
-                              <option value="seller">Seller</option>
-                              <option value="buyer">Buyer</option>
-                              <option value="admin">Admin</option>
-                             </select>
-                            </div>
-                            <div class="seller-options" >
-                            </div>
-                            <div class="buyer-options" >
-                            </div>
-                           <div class="admin-options" >
-                           </div>
-                             <div className="button-box">
+                              <div className="button-box">
                                 <div className="login-toggle-btn">
                                   <input type="checkbox" />
                                   <label className="ml-10">Remember me</label>
@@ -89,22 +152,50 @@ const LoginRegister = () => {
                       <Tab.Pane eventKey="register">
                         <div className="login-form-container">
                           <div className="login-register-form">
-                            <form>
+                            <form onSubmit={handleRegistation}>
                               <input
+                                required
                                 type="text"
                                 name="user-name"
                                 placeholder="Username"
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
                               />
                               <input
+                                required
                                 type="password"
                                 name="user-password"
                                 placeholder="Password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
                               />
                               <input
+                                required
                                 name="user-email"
                                 placeholder="Email"
                                 type="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                               />
+
+                              <div className="shop-top-bar mb-35">
+                                <div className="select-shoing-wrap">
+                                  <div className="shop-select">
+                                    <p>Select user type:</p>
+                                    <select
+                                      value={userType}
+                                      onChange={handleUserTypeChange}
+                                      name="userType"
+                                    >
+                                      <option value="seller" selected>Seller</option>
+                                      <option value="buyer">Buyer</option>
+                                      <option value="admin">Admin</option>
+                                    </select>
+                                  </div>
+                                  <p></p>
+                                </div>
+                              </div>
+
                               <div className="button-box">
                                 <button type="submit">
                                   <span>Register</span>
