@@ -16,13 +16,11 @@ const NewProduct = () => {
   const navigate = useNavigate();
 
   const [product, setProduct] = useState({
-    category: "",
-    fullDescription: "",
+    categoryId: "",
+    description: "",
     image: [],
     name: "",
     price: "",
-    shortDescription: "",
-    sku: "",
     stock: "",
   });
 
@@ -74,12 +72,10 @@ const NewProduct = () => {
         if (data && data.message) {
           setProduct({
             category: "",
-            fullDescription: "",
+            description: "",
             image: [],
             name: "",
             price: "",
-            shortDescription: "",
-            sku: "",
             stock: "",
           });
         }
@@ -121,29 +117,18 @@ const NewProduct = () => {
                   <div className="col-md-6 mb-3">
                     <div className="leave-form">
                       <select
-                        name="category"
-                        value={product.category}
+                        name="categoryId"
+                        value={product.categoryId}
                         onChange={handleChange}
                         className="form-control"
                         required
                       >
                         <option value="">Select Category</option>
-                        <option value="fashion">Fashion</option>
-                        <option value="men">Men</option>
+                        <option value="1">Fashion</option>
+                        <option value="2">Men</option>
+                        <option value="3">Women</option>
+                        <option value="11"> Cars </option>
                       </select>
-                    </div>
-                  </div>
-                  <div className="col-md-6 mb-3">
-                    <div className="leave-form">
-                      <input
-                        type="text"
-                        placeholder="SKU"
-                        name="sku"
-                        value={product.sku}
-                        onChange={handleChange}
-                        className="form-control"
-                        required
-                      />
                     </div>
                   </div>
                   <div className="col-md-6 mb-3">
@@ -175,21 +160,9 @@ const NewProduct = () => {
                   <div className="col-md-12 mb-3">
                     <div className="leave-form">
                       <textarea
-                        placeholder="Short Description"
-                        name="shortDescription"
-                        value={product.shortDescription}
-                        onChange={handleChange}
-                        className="form-control"
-                        required
-                      />
-                    </div>
-                  </div>
-                  <div className="col-md-12 mb-3">
-                    <div className="leave-form">
-                      <textarea
-                        placeholder="Full Description"
-                        name="fullDescription"
-                        value={product.fullDescription}
+                        placeholder="Description"
+                        name="description"
+                        value={product.description}
                         onChange={handleChange}
                         className="form-control"
                         required

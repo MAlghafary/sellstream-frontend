@@ -42,13 +42,13 @@ const Product = () => {
         {/* product description tab */}
         <ProductDescriptionTab
           spaceBottomClass="pb-90"
-          productFullDesc={product.fullDescription}
+          productFullDesc={product.description}
         />
 
         {/* related product slider */}
         <RelatedProductSlider
           spaceBottomClass="pb-95"
-          category={product.category[0]}
+          category={product.category}
         />
       </LayoutOne>
     </Fragment>
