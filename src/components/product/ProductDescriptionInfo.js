@@ -57,6 +57,7 @@ const ProductDescriptionInfo = ({
           <div className="pro-details-rating">
             <Rating ratingValue={product.rating} />
           </div>
+          
         </div>
       ) : (
         ""

@@ -29,7 +29,6 @@ const HomeFashion = () => {
           throw new Error("Failed to fetch products");
         }
         const data = await response.json();
-        console.log(data)
         dispatch(setProducts(data)); // Dispatch the action to update the Redux store with fetched data
       } catch (error) {
         console.error("Error fetching products:", error);

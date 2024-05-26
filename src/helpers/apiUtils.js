@@ -9,9 +9,9 @@ const handleApiResponse = async (responsePromise, callback) => {
     if (response.ok) {
       // If response status is OK, check for message and show toast
       if (data && data.message) {
-        cogoToast.success(data.message, { position: 'top-right' });
+        cogoToast.success(data.message, { position: 'top-right' }, 5);
       } else if (data && data.error) {
-        cogoToast.error(data.error, { position: 'top-right' });
+        cogoToast.error(data.error, { position: 'top-right' },5);
       }
     } else {
         if(data.error) {
@@ -36,6 +36,7 @@ export const fetchDataWithToken = async (url, token, logoutAction) => {
   try {
     const response = await fetch(url, {
       headers: {
+        "Content-Type": "application/json",
         Authorization: `${token}`, // Include the token in the Authorization header
       },
     });
@@ -49,9 +50,8 @@ export const fetchDataWithToken = async (url, token, logoutAction) => {
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
-
-    const result = await response.json();
-    return result;
+    const data = await response.json();
+    return data;
   } catch (error) {
     console.error("Error fetching data:", error);
     throw error; // Rethrow the error so that it can be handled by the caller
@@ -65,6 +65,29 @@ export const postDataWithToken = async (url ,data , token, logoutAction) => {
     const response = await fetch(url, {
       method: "POST",
       body: data,
+      headers: {
+        Authorization: `${token}`,
+        "Content-Type": "application/json"
+      },
+    });
+
+    if (response.status === 401 && token) {
+      // If response status is 401 and token is present, execute logout action
+      logoutAction();
+      return; // Exit the function
+    }
+
+    return response;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    throw error; // Rethrow the error so that it can be handled by the caller
+  }
+};
+
+export const putDataWithToken = async (url , token, logoutAction) => {
+  try {
+    const response = await fetch(url, {
+      method: "PUT",
       headers: {
         Authorization: `${token}`,
         "Content-Type": "application/json"

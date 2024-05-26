@@ -46,7 +46,9 @@ const LoginRegister = () => {
         body: JSON.stringify(userData),
       });
 
-      handleApiResponse(response,() => {})
+      handleApiResponse(response,() => {
+        
+      })
     } catch (error) {
       console.error("Error:", error);
     }
@@ -71,8 +73,11 @@ const LoginRegister = () => {
       });
 
       handleApiResponse(response,(data) => {
-        dispatch(loginSuccess({ data}))
-        navigate('/');
+        if(data && data.message) {
+          dispatch(loginSuccess({ data}))
+          navigate('/');
+        }
+       
       })
     } catch (error) {
       console.error("Error:", error);

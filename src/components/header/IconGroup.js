@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import clsx from "clsx";
 import MenuCart from "./sub-components/MenuCart";
 import { logout } from "../../store/slices/login-slice";
+import { useEffect } from "react";
 
 const IconGroup = ({ iconWhiteClass }) => {
   const handleClick = (e) => {
@@ -28,9 +29,14 @@ const IconGroup = ({ iconWhiteClass }) => {
   const handleLogout = () => {
     // Dispatch the logout action
     dispatch(logout());
-    // Redirect to the login page
-    navigate(process.env.PUBLIC_URL + "/login-register");
   };
+
+  useEffect(() => {
+    if (!isLoggedIn) {
+      // Redirect to the login-register page if not logged in
+      navigate("/login-register");
+    }
+  }, [isLoggedIn, navigate]);
 
   return (
     <div className={clsx("header-right-wrap", iconWhiteClass)}>
