@@ -79,7 +79,7 @@ export const getSortedProducts = (products, sortType, sortValue) => {
   if (products && sortType && sortValue) {
     if (sortType === "category") {
       return products.filter(
-        product => product.category.filter(single => single === sortValue)[0]
+        product => product.category === sortValue
       );
     }
     if (sortType === "tag") {
@@ -135,12 +135,9 @@ const getIndividualItemArray = array => {
 export const getIndividualCategories = products => {
   let productCategories = [];
   products &&
-    products.map(product => {
+    products.map((product) => {
       return (
-        product.category &&
-        product.category.map(single => {
-          return productCategories.push(single);
-        })
+        product.category && productCategories.push(product.category)
       );
     });
   const individualProductCategories = getIndividualItemArray(productCategories);
